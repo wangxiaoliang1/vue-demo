@@ -1,7 +1,7 @@
 <template>
   <div class="button-right">
     <ButtonGroup>
-      <Button v-for="(item, i) in btnData" :key="i" type="primary" :custom-icon="item.icon" @click="btnClick(item.name)">{{$t(item.name)}}</Button>
+      <Button class="button-right-style" v-for="(item, i) in btnData" :key="i" type="primary" :custom-icon="item.icon" @click="btnClick(item.name)">{{$t(item.name)}}</Button>
     </ButtonGroup>
   </div>
 
@@ -28,6 +28,12 @@
 <style scope lang="less">
   .button-right {
     float: right;
+
+    &-style {
+      & > i {
+        vertical-align: 0;
+      }
+    }
 
     &::after {
       display: block;

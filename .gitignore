@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 /dist
+dist.7z
 package-lock.json
+upload.js
 
 # local env files
 .env.local
@@ -20,3 +22,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+/my-theme/

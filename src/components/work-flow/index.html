@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>工作流</title>
+        <link rel="stylesheet" href="./scroll/scroll.css" />
+        <link rel="stylesheet" href="./workflow/workflow-ui.css" />
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="./jquery.min.js"></script>
+        <script src="./utility.js"></script>
+        <script src="./mousewheel/mousewheel.js"></script>
+        <script src="./scroll/scroll.js"></script>
+        <script src="./workflow/workflow-ui.js"></script>
+        <script>
+            var jsonpData;
+            //跨域获取数据
+            function getJsonpData(data){
+                jsonpData = data;
+            }
+            $(function() {
+                // 设计页面初始化
+                $("#app").workflow({
+                    openNode: function(node) {
+                        // console.log(node);
+                        node.name = "测试节点名称";
+
+                        //更新节点名称
+                        $("#app").workflowSet("updateNodeName", {
+                            nodeId: node.id
+                        });
+
+                        //获取整个流程图信息
+                        var shcemeData = $("#app").workflowGet();
+                        console.log(shcemeData);
+                    },
+                    openLine: function(line) {
+                        // console.log(line);
+                    }
+                });
+
+                //初始化流程图
+                $("#app").workflowSet("set", { data: jsonpData });
+            });
+            // 保存节点数据
+            /*
+            acceptClick = function (callBack) {
+                if (!$('#baseInfo').lrValidform()) {
+                    return false;
+                }
+                var baseInfoData = $('#baseInfo').lrGetFormData();
+                //endround:结束节点
+                switch (currentNode.type) {
+                    case 'startround':// 开始节点
+                        currentNode.authorizeFields = authorize;
+                        currentNode.wfForms = workforms;
+                        break;
+                    case 'auditornode'://传阅节点
+                    case 'stepnode'://普通节点
+                        currentNode.name = baseInfoData.name;
+                        currentNode.auditors = auditors;
+                        currentNode.authorizeFields = authorize;
+                        currentNode.wfForms = workforms;
+
+                        currentNode.timeoutAction = baseInfoData.timeoutAction;// 超时流转时间
+                        currentNode.timeoutNotice = baseInfoData.timeoutNotice;// 超时通知时间
+                        break;
+                    case 'confluencenode'://会签节点
+                        currentNode.confluenceType = baseInfoData.confluenceType;
+                        currentNode.confluenceRate = baseInfoData.confluenceRate;
+                        break;
+                    case 'conditionnode'://条件判断节点
+                        currentNode.name = baseInfoData.name;
+                        currentNode.conditions = conditions;
+
+                        currentNode.dbConditionId = $('#dbConditionId').lrselectGet();
+                        currentNode.conditionSql = $('#conditionSql').val();
+                        break;
+                };
+                if (currentNode.type != 'conditionnode') {
+                    currentNode.iocName = $('#iocName').val();
+                    currentNode.dbSuccessId = $('#dbSuccessId').lrselectGet();
+                    currentNode.dbSuccessSql = $('#dbSuccessSql').val();
+
+                    if (currentNode.type != 'startround' && currentNode.type != 'auditornode') {
+                        currentNode.dbFailId = $('#dbFailId').lrselectGet();
+                        currentNode.dbFailSql = $('#dbFailSql').val();
+                    }
+                }
+                callBack();
+                return true;
+            };
+
+            // 保存步骤连线数据
+            acceptClick = function (callBack) {
+                if (!$('#form').lrValidform()) {
+                    return false;
+                }
+                var formData = $('#form').lrGetFormData();
+                currentLine.name = formData.name;
+                currentLine.wftype = formData.wftype;
+
+                callBack();
+                return true;
+            };
+            */
+        </script>
+    </body>
+</html>

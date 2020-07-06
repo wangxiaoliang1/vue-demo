@@ -1,0 +1,281 @@
+@import '~view-design/src/styles/index.less';
+@import "./assets/common.less";
+@import "./assets/scrollBar.less";
+
+.page-style, .comment {
+  height: @baseSize;
+}
+
+// 图片去掉间隙
+.img-style {
+  display: inline-block;
+  font-size: 0;
+  width: 100%;
+}
+
+// 主体颜色
+.primary_font_color {
+  color: @primary-color;
+}
+
+.primary_border_color {
+  border: 1px solid @primary-color;
+}
+
+.primary_bg_color {
+  background-color: @primary-color;
+}
+
+// 调整图标基线
+.ivu-icon-iconfont {
+  vertical-align: 0;
+}
+
+// 网格鼠标经过样式
+.row_hover {
+  padding: 2px 5px;
+  &:hover {
+    background-color: @primary-color;
+    color: @baseColorWhite;
+    cursor: pointer;
+  }
+}
+
+// split右侧card边距
+.split-right-card {
+  margin-left: 5px;
+}
+
+// 卡片样式
+.card-style {
+  height: calc(@baseSize);
+
+  .ivu-card-head, .ivu-card-body {
+    padding: @basePadding;
+  }
+
+  .ivu-card-body {
+    height: calc(@baseSize - 40px);
+  }
+}
+
+.card-style-form {
+  .ivu-form-item {
+    margin: 0 5px 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-content {
+      display: inline-block;
+    }
+  }
+
+  .ivu-input-group {
+    top: 0;
+  }
+}
+
+.ivu-form {
+  &-item {
+    margin-bottom: 16px;
+
+    &-content {
+      line-height: @baseLineHeight;
+    }
+
+    &-error-tip {
+      padding-top: 2px;
+    }
+  }
+
+  &-item-label {
+    padding: 5px 12px 5px 0 !important;
+  }
+}
+
+//自定义弹窗样式
+.page-style-modal {
+  .ivu-modal-body {
+    padding: 5px 10px;
+  }
+}
+.flow-style-modal .ivu-modal-content {
+  //background-color: unset;
+
+  .ivu-modal-body {
+    padding: 0;
+  }
+}
+
+//自定义组件样式
+.page-style-drawer {
+  .ivu-drawer-mask, .ivu-drawer-wrap {
+    z-index: 3000;
+  }
+}
+
+// 树型组件样式
+.ivu-tree-title {
+  &.ivu-tree-title-selected, &:hover {
+    background-color: @primary-color;
+
+    span, i {
+      color: @baseColorWhite;
+    }
+  }
+}
+
+// 全局size默认为small的时候，调整关闭图标位置
+.ivu-message-notice-close {
+  top: 5px;
+  i.ivu-icon {
+    top: 0;
+  }
+}
+
+// 表格样式
+.ivu-table {
+  .ivu-table-header, .ivu-table-body, .ivu-table-fixed-header, .ivu-table-fixed-body {
+    th, td {
+      height: 10px !important; // 全局表单头高度
+      padding: 0;
+    }
+  }
+
+  .ivu-table-fixed {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  // 表格高亮行颜色改变
+  .ivu-table-row-highlight, .ivu-table-row-hover, .ivu-table-row-highlight.ivu-table-row-hover {
+    td, .table_cell_font_color {
+      //background-color: @primary-color;
+      color: @baseColorWhite;
+    }
+
+  }
+  .ivu-table-cell {
+    padding: 3px !important;
+  }
+
+}
+// 多级表格 expand 样式
+.ivu-table-small .ivu-table-cell-with-expand {
+  height: 24px;
+  line-height: 18px;
+}
+
+// 分页样式
+.custom-page { //  修改分页面显示
+  margin-top: 10px;
+
+  .ivu-page-total {
+    float: right; //  修改分页面显示
+  }
+}
+
+// 分页下拉组件page组件自定义样式
+.select_page_style.ivu-page-simple .ivu-page-simple-pager input {
+  border: 0;
+}
+
+// 第三方插件vue-treeselect样式修改
+.vue-treeselect {
+  height: @baseLineHeight;
+
+  .vue-treeselect__control {
+    height: @baseLineHeight;
+
+    .vue-treeselect__multi-value {
+      margin-bottom: 0;
+    }
+  }
+
+  .vue-treeselect__placeholder, .vue-treeselect__single-value {
+    line-height: @baseLineHeight;
+  }
+
+  .vue-treeselect__multi-value-item-container {
+    padding-top: 3px;
+  }
+}
+
+//钢网表格样式
+.steel_table .ivu-table{
+  .ivu-table-body{
+    background: #282C37;
+  }
+
+  .ivu-table-header, .ivu-table-body, .ivu-table-fixed-header, .ivu-table-fixed-body {
+    th, td {
+      height: 40px !important; // 全局表单头高度
+      padding: 0;
+      background: #282C37;
+      color: #5fb878;
+    }
+  }
+  .table_cell_bg_color_red td{
+    color: red;
+  }
+  .table_cell_bg_color_yellow td{
+    color: #cccc00;
+  }
+  .ivu-table-tip table td{
+    background: #282C37;
+    color: #999;
+  }
+}
+.steel_con .ivu-card-body{
+  background: #282C37;
+}
+
+//自定义表格行样式
+.table_cell_bg_color_red td{
+  color: #000;
+  background: red;
+}
+.table_cell_bg_color_yellow td{
+  color: #000;
+  background: #cccc00;
+}
+.table_cell_bg_color_green td{
+  color: #000;
+  background: #A0DE86;
+}
+//oee card 样式
+.oee-charts {
+  .ivu-card-head{
+    padding: 2px 8px;
+  }
+}
+
+// 气泡提示组件样式
+.poptip-style {
+  .ivu-poptip-body-content {
+    overflow: inherit;
+  }
+}
+//导入模块公共样式
+.import_con {
+  .upload-con {
+    width: 100%;
+    text-align: center;
+  }
+  .download {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    span {
+      color: #409eef;
+      cursor: pointer;
+    }
+  }
+}
+//穿梭框公共样式
+.transfer_con {
+  display: flex;
+  justify-content: center;
+}

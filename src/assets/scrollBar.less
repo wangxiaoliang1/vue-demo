@@ -1,0 +1,28 @@
+//::-webkit-scrollbar 整个滚动条.
+//::-webkit-scrollbar-thumb  滚动条上的滚动滑块.
+//::-webkit-scrollbar-track  滚动条的轨道（里面装有Thumb）
+//::-webkit-scrollbar-button 滚动条上的按钮 (上下箭头).
+//::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+//::-webkit-scrollbar-corner 当同时有垂直滚动条和水平滚动条时交汇的部分.
+//::-webkit-resizer 某些元素的corner部分的部分样式(例:textarea的可拖动按钮).
+
+.borderRadius {
+   border-radius: 5px;
+}
+
+// 滚动条整体部分
+::-webkit-scrollbar {
+  width: 9px; // 垂直滚动条
+  height: 9px; // 水平滚动条
+
+  &-track {
+    .borderRadius;
+  }
+
+  &-thumb {
+    .borderRadius;
+    background-color: #999999;
+  }
+}
+
+

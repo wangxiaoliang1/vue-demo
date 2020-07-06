@@ -1,4 +1,4 @@
-# vue-demo
+# baize.ui
 
 ## Project setup
 ```
